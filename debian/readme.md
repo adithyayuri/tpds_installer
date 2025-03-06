@@ -26,7 +26,7 @@ The Microchip Trustplatform Design Suite (TPDS) is a development environment for
 
 1. Download install script:
    ```
-   wget https://github.com/MCHP-repo/tpds-installer/main/install_tpds.sh
+   wget https://github.com/adithyayuri/tpds_installer/blob/main/debian/install.sh
    ```
 
 2. Make the installer script executable:
@@ -34,9 +34,9 @@ The Microchip Trustplatform Design Suite (TPDS) is a development environment for
    chmod +x install_tpds.sh
    ```
 
-3. Run the installer:
+3. Run the installer (Administrator sudo privileges are required for updating udev rules and installation of python addons):
    ```
-   ./install_tpds.sh
+   sudo ./install_tpds.sh
    ```
 
 4. Restart your system (recommended for UDEV rules to take effect)
@@ -58,7 +58,7 @@ To uninstall TPDS and related components:
 
 1. Make the uninstaller script executable:
    ```
-   wget https://github.com/MCHP-repo/tpds-installer/main/uninstall_tpds.sh
+   wget https://github.com/adithyayuri/tpds_installer/blob/main/debian/uninstall.sh
    ```
 
 2. Make the uninstaller script executable:
@@ -86,7 +86,7 @@ After installation, you can start TPDS by:
 1. Clicking the TPDS desktop shortcut
 2. Running the launcher script:
    ```
-   ~/launch_tpds.sh
+   ~./launch_tpds.sh
    ```
 
 ## Troubleshooting
