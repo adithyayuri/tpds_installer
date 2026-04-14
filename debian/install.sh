@@ -33,7 +33,15 @@ if command -v python3.10 &> /dev/null; then
     PYTHON_CMD=$(which python3.10)
 else
     echo "Python 3.10 is not installed, installing..."
-    sudo apt-get update
+    if apt-cache search python3 | grep -q python3.10; then
+        echo -e "${GREEN}python3.10 found in repositories. Installing...${NC}"
+    else
+        echo -e "${YELLOW}python3.10 not found in repositories. Adding Deadsnakes PPA...${NC}"
+        sudo apt-get update
+        sudo apt-get install -y software-properties-common
+        sudo add-apt-repository -y ppa:deadsnakes/ppa
+        sudo apt-get update
+    fi
     sudo apt-get install -y python3.10 python3.10-venv python3.10-dev
     PYTHON_CMD=$(which python3.10)
 fi
